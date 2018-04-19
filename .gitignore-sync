@@ -1,0 +1,5 @@
+[github/gitignore]
+Rust.gitignore
+Global/macOS.gitignore
+Global/Linux.gitignore
+Global/Windows.gitignore
