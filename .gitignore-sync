@@ -3,3 +3,6 @@ Rust.gitignore
 Global/macOS.gitignore
 Global/Linux.gitignore
 Global/Windows.gitignore
+
+[inline]
+!Cargo.lock # keep it for dependencies locking
