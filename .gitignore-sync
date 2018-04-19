@@ -1,5 +1,6 @@
 [github/gitignore]
 Rust.gitignore
+Node.gitignore
 Global/macOS.gitignore
 Global/Linux.gitignore
 Global/Windows.gitignore

@@ -1,0 +1,11 @@
+{
+  "name": "playground-rust",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "precommit": "cargo fmt --all"
+  },
+  "devDependencies": {
+    "husky": "^0.14.3"
+  }
+}
