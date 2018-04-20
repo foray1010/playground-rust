@@ -7,3 +7,4 @@ Global/Windows.gitignore
 
 [inline]
 !Cargo.lock # keep it for dependencies locking
+/*/target/ # as this repo contains multiple rust projects

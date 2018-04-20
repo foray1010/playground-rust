@@ -1,0 +1,6 @@
+[package]
+name = "ch02_guessing_game"
+version = "0.1.0"
+authors = ["foray1010 <foray1010@users.noreply.github.com>"]
+
+[dependencies]
