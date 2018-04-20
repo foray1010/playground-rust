@@ -1,15 +1,45 @@
+extern crate rand;
+
+use rand::Rng;
+use std::cmp::Ordering;
 use std::io;
 
+fn get_input() -> String {
+    let mut input = String::new();
+    io::stdin()
+        .read_line(&mut input)
+        .expect("Failed to read line");
+    return input;
+}
+
 fn main() {
+    let max = 100;
+    let min = 1;
+    let show_answer = false;
+
     println!("Guess the number!");
 
-    println!("Please input your guess.");
+    let secret_number = rand::thread_rng().gen_range(min, max + 1);
+    if show_answer {
+        println!("The secret number is: {}", secret_number);
+    }
 
-    let mut guess = String::new();
+    loop {
+        println!("Please input your guess.");
 
-    io::stdin()
-        .read_line(&mut guess)
-        .expect("Failed to read line");
+        let guessed_number: u32 = match get_input().trim().parse() {
+            Ok(num) => num,
+            Err(_) => continue,
+        };
+        println!("You guessed: {}", guessed_number);
 
-    println!("You guessed: {}", guess);
+        match guessed_number.cmp(&secret_number) {
+            Ordering::Less => println!("Too small!"),
+            Ordering::Greater => println!("Too big!"),
+            Ordering::Equal => {
+                println!("You win!");
+                break;
+            }
+        }
+    }
 }
