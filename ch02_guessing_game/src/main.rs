@@ -33,6 +33,24 @@ fn main() {
         };
         println!("You guessed: {}", guessed_number);
 
+        match guessed_number.cmp(&max) {
+            Ordering::Less => (),
+            Ordering::Greater => {
+                println!("Excess upper limit!");
+                continue;
+            }
+            Ordering::Equal => (),
+        }
+
+        match guessed_number.cmp(&min) {
+            Ordering::Less => {
+                println!("Excess lower limit!");
+                continue;
+            }
+            Ordering::Greater => (),
+            Ordering::Equal => (),
+        }
+
         match guessed_number.cmp(&secret_number) {
             Ordering::Less => println!("Too small!"),
             Ordering::Greater => println!("Too big!"),
