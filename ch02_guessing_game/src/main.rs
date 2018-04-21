@@ -13,14 +13,14 @@ fn get_input() -> String {
 }
 
 fn main() {
-    let max = 100;
-    let min = 1;
-    let show_answer = false;
+    const MAX: i32 = 100;
+    const MIN: i32 = 1;
+    const SHOW_ANSWER: bool = false;
 
     println!("Guess the number!");
 
-    let secret_number = rand::thread_rng().gen_range(min, max + 1);
-    if show_answer {
+    let secret_number = rand::thread_rng().gen_range(MIN, MAX + 1);
+    if SHOW_ANSWER {
         println!("The secret number is: {}", secret_number);
     }
 
@@ -34,12 +34,12 @@ fn main() {
         let guessed_number = guessed_number as i32;
         println!("You guessed: {}", guessed_number);
 
-        if guessed_number > max {
+        if guessed_number > MAX {
             println!("Excess upper limit!");
             continue;
         }
 
-        if guessed_number < min {
+        if guessed_number < MIN {
             println!("Excess lower limit!");
             continue;
         }
