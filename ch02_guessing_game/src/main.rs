@@ -27,10 +27,11 @@ fn main() {
     loop {
         println!("Please input your guess.");
 
-        let guessed_number: u32 = match get_input().trim().parse() {
+        let guessed_number: f64 = match get_input().trim().parse() {
             Ok(num) => num,
             Err(_) => continue,
         };
+        let guessed_number = guessed_number as i32;
         println!("You guessed: {}", guessed_number);
 
         match guessed_number.cmp(&max) {
