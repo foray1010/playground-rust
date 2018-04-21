@@ -34,22 +34,14 @@ fn main() {
         let guessed_number = guessed_number as i32;
         println!("You guessed: {}", guessed_number);
 
-        match guessed_number.cmp(&max) {
-            Ordering::Less => (),
-            Ordering::Greater => {
-                println!("Excess upper limit!");
-                continue;
-            }
-            Ordering::Equal => (),
+        if guessed_number > max {
+            println!("Excess upper limit!");
+            continue;
         }
 
-        match guessed_number.cmp(&min) {
-            Ordering::Less => {
-                println!("Excess lower limit!");
-                continue;
-            }
-            Ordering::Greater => (),
-            Ordering::Equal => (),
+        if guessed_number < min {
+            println!("Excess lower limit!");
+            continue;
         }
 
         match guessed_number.cmp(&secret_number) {
