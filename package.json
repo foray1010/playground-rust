@@ -7,7 +7,6 @@
   },
   "devDependencies": {
     "husky": "^0.14.3",
-    "loop": "^3.0.3",
-    "npm-run-all": "^4.1.2"
+    "loop": "^3.0.3"
   }
 }
