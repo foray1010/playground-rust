@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "precommit": "loop 'cargo check && cargo fmt --all' && git add ."
+    "precommit": "loop 'cargo fmt --all && cargo check && cargo test' && git add ."
   },
   "devDependencies": {
     "husky": "^0.14.3",
