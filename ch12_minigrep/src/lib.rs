@@ -34,10 +34,7 @@ impl Config {
 }
 
 pub fn run(config: Config) -> Result<(), Box<Error>> {
-    let mut f = File::open(config.filename)?;
-
-    let mut contents = String::new();
-    f.read_to_string(&mut contents)?;
+    let contents = read_file_to_string(&config.filename)?;
 
     let results = if config.case_sensitive {
         search(&config.query, &contents)
@@ -50,6 +47,13 @@ pub fn run(config: Config) -> Result<(), Box<Error>> {
     }
 
     Ok(())
+}
+
+fn read_file_to_string(filename: &str) -> Result<String, Box<Error>> {
+    let mut contents = String::new();
+    File::open(filename)?.read_to_string(&mut contents)?;
+
+    Ok(contents)
 }
 
 fn search<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
