@@ -8,7 +8,7 @@ pub use config::Config;
 use search::*;
 use utils::*;
 
-pub fn run(config: Config) -> Result<(), Box<Error>> {
+pub fn run(config: &Config) -> Result<(), Box<Error>> {
     let contents = read_file_to_string(&config.filename)?;
 
     let results = if config.case_sensitive {
@@ -17,7 +17,7 @@ pub fn run(config: Config) -> Result<(), Box<Error>> {
         search_case_insensitive(&config.query, &contents)
     };
 
-    if results.len() > 0 {
+    if !results.is_empty() {
         println!("{}", results.join("\n"));
     }
 
