@@ -9,7 +9,7 @@ fn get_input() -> String {
     io::stdin()
         .read_line(&mut input)
         .expect("Failed to read line");
-    return input;
+    input
 }
 
 fn main() {
