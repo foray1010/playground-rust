@@ -2,11 +2,11 @@
   "name": "playground-rust",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {
-    "precommit": "loop 'cargo fmt --all && cargo check && cargo test' && git add ."
-  },
+  "scripts": {},
   "devDependencies": {
-    "husky": "^0.14.3",
+    "@commitlint/cli": "^7.2.0",
+    "@commitlint/config-conventional": "^7.1.2",
+    "husky": "^1.1.1",
     "loop": "^3.0.3"
   }
 }
