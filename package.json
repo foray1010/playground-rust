@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "test:all": "loop 'cargo fmt --all && cargo clippy --all-targets --all-features -- -D warnings && cargo check && cargo test'"
+    "test:all": "loop 'cargo fmt --all && cargo clippy --all-targets --all-features && cargo check && cargo test'"
   },
   "devDependencies": {
     "@commitlint/cli": "^7.2.0",

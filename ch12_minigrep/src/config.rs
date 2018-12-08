@@ -7,7 +7,7 @@ pub struct Config {
 }
 
 impl Config {
-    pub fn new(args: &[String]) -> Result<Config, &'static str> {
+    pub fn new(args: &[String]) -> Result<Self, &'static str> {
         if args.len() < 3 {
             return Err("not enough arguments");
         }
@@ -17,7 +17,7 @@ impl Config {
 
         let case_sensitive = env::var("CASE_INSENSITIVE").is_err();
 
-        Ok(Config {
+        Ok(Self {
             query,
             filename,
             case_sensitive,
