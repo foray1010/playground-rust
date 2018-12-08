@@ -3,12 +3,11 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "test:all": "loop 'cargo fmt --all && cargo clippy --all-targets --all-features && cargo check && cargo test'"
+    "test:all": "find . -maxdepth 1 -type d \\( -name 'ch*' \\) -exec bash -c \"cd '{}' && cargo fmt --all && cargo clippy --all-targets --all-features && cargo check && cargo test\" \\;"
   },
   "devDependencies": {
     "@commitlint/cli": "^7.2.0",
     "@commitlint/config-conventional": "^7.1.2",
-    "husky": "^1.1.1",
-    "loop": "^3.0.3"
+    "husky": "^1.1.1"
   }
 }
